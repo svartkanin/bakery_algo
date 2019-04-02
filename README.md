@@ -1,18 +1,22 @@
-
-# Required packages
-
-python3-pytest
-python3.7
+# What is it
+This is a demonstration of the knapsack problem in form of a bakery order distribution application. It processed an order and distributes given packaging sizes to cover the order by using the minimum cost and packaging required.
 
 
-# Run the code 
+## Installing packages
+To run the application the following packages must be installed
 
-python3 app/app.py
+- python3-pytest
+- python3.7
 
 
-# Run the tests 
+### Run the code 
 
-pytest-3
+```python3 app/app.py```
+
+
+### Run the tests 
+
+```pytest-3```
 
 There are currently 3 test cases:
 
@@ -21,28 +25,8 @@ There are currently 3 test cases:
 - Test error on wrong code
 
 
-# Workflow
 
-After running the program the current product list is printed; the user can now enter an order in the command line and get the total amount, as well as the breakdown of which packages have been used.
-Currently only orders that are able to be packaged without any rest are processed, otherwise a message will be printed indicated that the order could not be processed. 
-
-E.g. 
-
-$ python3 app/app.py
-...
-Please enter an order: 11 CF
-'11 CF' total: $21.85
-               1 x 5 $9.95
-               2 x 3 $5.95
-
-Please enter an order: 7 CF
-Packaging not possible for this order: Order '7 CF'
-
-Please enter an order: 11 AA
-No product with that code could be found: Order '11 AA'
-
-
-# Packging algo
+## Packging algorithm (Derived form of the knapsack problem)
 
 The algorithm builds the final result from the bottom up. 
 It will calculate the packaging for each order [0, actual_order], whereas the currently calculated order is build on the previously calculated orders. 
